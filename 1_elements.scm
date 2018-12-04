@@ -17,3 +17,21 @@
 (define size 2)
 (* 5 size)
 
+(define (square x) (* x x))
+(square 2)
+
+(define (sum_of_squares x y)
+  (+ (square x)(square y)))
+(sum_of_squares 3 4)
+
+(define (f a)
+  (sum_of_squares (+ a 1) (* a 2)))
+(f 5)
+
+(define (abs x)
+  (cond ((> x 0) x)
+        ((= x 0) 0)
+        ((< x 0) (- x))))
+
+(abs -2)
+(= 5 5)
