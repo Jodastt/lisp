@@ -1,2 +1,2 @@
 # lisp
-just some lisps stuff i'm working on
+just some lisp stuff i'm working on
