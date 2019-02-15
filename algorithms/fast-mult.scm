@@ -1,13 +1,10 @@
-(define (double x)
-  (* x 2))
-
-(define (halve x)
-  (/ x 2))
-
-(define (mult a b)
-  (cond ((= b 0)
-          0)
-        ((even? a)
-          (mult (halve a)(double b)))
+(define (mult a b c)
+  (define (double x)
+    (* x 2))
+  (define (halve x)
+    (/ x 2))
+  (cond ((= b 0) c)
+        ((even? b)
+          (mult (double a)(halve b) c))
         (else  
-          (+ a (mult a (- b 1))))))
+          (mult a (- b 1) (+ c a)))))
