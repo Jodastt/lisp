@@ -1,7 +1,8 @@
-(define (stein u v)
+define (stein u v)
   (cond
     ((or (= u 0)(= u v))
       v)
+    ((= v 0) u)
     ((and (even? u) (even? v))
       (* 2 (stein (/ u 2)(/ v 2))))
     ((and (even? u) (odd? v))
