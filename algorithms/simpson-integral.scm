@@ -1,0 +1,13 @@
+(define (simpson-integral f a b n)
+  (define (sum term a next b)
+    (if (> a b)
+        0
+        (+ (term a)
+           (sum term (next a) next b))))
+  (define h (/ (- b a) n))
+  (define (addh x) (+ x h h))
+  (* (+ (f a)
+    	  (* 2 (sum f a addh b))
+    	  (* 4 (sum f (+ a h) addh b))
+    	  (f b))
+      (/ h 3)))
