@@ -1,0 +1,6 @@
+(define (church-numberal x)
+  (define (iter result x count)
+    (if (< count x) 
+    (iter (add-1 result x (+ 1 count)))
+    count))
+  (iter zero x 0))
