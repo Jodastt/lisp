@@ -10,7 +10,8 @@
 
 (define (church-numeral x)
   (define (iter result x count)
-    (if (< count x) 
-    (iter (add-1 result) x (+ 1 count)))
+    (cond (< count x) 
+      ((even? x) (* 2 (iter (add-1 result) (/ x 2) (+ 1 count)))
+      (else (iter (add-1 result) x (+ 1 count)))))
     result)
   (iter zero x 0))
