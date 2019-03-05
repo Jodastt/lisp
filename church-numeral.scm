@@ -1,4 +1,4 @@
-(define (church-numberal x)
+(define (church-numeral x)
   (define (iter result x count)
     (if (< count x) 
     (iter (add-1 result x (+ 1 count)))
